@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Dashboard</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='admindashStyle.css')}}">
+
+</head>
+
+<body>
+    <div class="navbtn">
+        <button class="openbtn" onclick="openNav()">☰</button>
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="/homepage">Homepage</a>
+            <a href="dashboard">Dashboard</a>
+            <br />
+            <br />
+            <br />
+            <br>
+            <br />
+            <br>
+            <a href="settings">Settings</a>
+        </div>
+    </div>
+    <header>
+        <img src="{{url_for('static', filename='LOGO.jpg')}}" alt="NIESAT Logo" width="80" height="80" />
+
+        <h1>NIESAT Admin Dashboard</h1>
+        <h4>Kwara State Chapter</h4>
+    </header>
+
+    <div class="row">
+        <div class="col-md-8">
+
+        </div>
+
+        <div class="container-fluid">
+            <h1 class="mt-4">Admin Dashboard</h1>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">User Information</h5>
+                            <form method="POST" action="{{ url_for('pop_latecomer')}}">
+
+                                <div class="form-group">
+                                    <label class="form-label" for="state_code">State Code</label>
+                                    <input class="form-control" id="stateCodeInput" maxlength="11" minlength="1"
+                                        name="state_code" required="" type="text" value="" required>
+                                    <!--  pattern="[Kk][Ww]/\d{2}[a-cA-C]/\d{4}" title="Must contain correct and complete statecode: KW/XXX/XXXX"-->
+
+                                </div>
+                                <button type="button" class="btn btn-primary" id="check-button">Check</button>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="balance">Amount</label>
+                                    <input class="form-control" id="balance-id" name="balance" required="" type="text"
+                                        value="">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="status">Status</label>
+                                    <select class="form-select" id="status" name="status" required="">
+                                        <option value="pending">Pending</option>
+                                        <option value="Approved">Approved</option>
+                                    </select>
+
+                                </div>
+
+                                <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Update">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Requests</h5>
+                            <table class="table table-striped mt-4">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>State Code</th>
+                                        <th>Request Type</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for request in pending_requests %}
+                                    <tr>
+                                        <td>{{request.transanct_date}}</td>
+                                        <td>{{request.state_code}}</td>
+                                        <td>{{request.request_type}}</td>
+                                        <td>{{request.amount}}</td>
+                                        <td>{{request.status}}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Get the elements
+        const stateCodeInput = document.getElementById('stateCodeInput');
+        const checkButton = document.getElementById('check-button');
+        const balanceInput = document.getElementById('balance-id');
+
+        // Add event listener to "Check" button
+        checkButton.addEventListener('click', () => {
+            // Get the account number value
+            const stateCode = stateCodeInput.value;
+
+            // Send a request to the server to fetch the amount based on the state code
+            fetch(`/get_details?stateCode=${stateCode}`)
+                .then(response => response.text()) // remove .json() method
+                .then(data => {
+                    // Update the "balance" input field with the fetched amount value
+                    balanceInput.value = parseFloat(data); // access data directly, assuming it's a string or number
+                })
+                .catch(error => console.error(error));
+        });
+
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "230px";
+            //document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            //document.getElementById("main").style.marginLeft = "0";
+            document.querySelector('#body').addEventListener('click', closeNav);
+        }
+
+    </script>
+
+</body>
+
+</html>

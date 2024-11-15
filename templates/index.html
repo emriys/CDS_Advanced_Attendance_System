@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to NIESAT</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"  type="text/css" href="{{url_for('static', filename='indexstyle.css')}}">
+	
+	<!-- <link rel="stylesheet" type="text/css" href="/static/indexstyle.css"> -->
+</head>
+<body>
+	<header>
+		<img src="{{url_for('static', filename='LOGO.jpg')}}" alt="NIESAT Logo" width="80" height = "80"/>
+		
+		<h1>Welcome to NIESAT CDS</h1>
+		<h4>Kwara State Chapter</h4>
+	</header>
+	<main>
+		<section>
+			<a href="{{ url_for('signin') }}"><button class="button"><h2>Sign In</h2></button></a>
+			<a href="{{ url_for('history') }}"><button class="button"><h2>View Attendance History</h2></button></a>
+			<a href="{{ url_for('pay_monthly_due') }}"><button class="button"><h2>Pay Monthly Dues</h2></button></a>
+		</section>
+	</main>
+</body>
+</html>

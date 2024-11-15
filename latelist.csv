@@ -1,0 +1,22 @@
+transanct_date,state_code,request_type,amount,status
+2024-10-01,TX123,Deposit,300,Pending
+2024-10-02,TX124,Withdrawal,200,Pending
+2024-10-03,TX125,Deposit,450,Pending
+2024-11-01,KW/23C/3886,latecomer sign-in,200,Pending
+2024-11-01,KW/23C/3887,latecomer sign-in,200,Pending
+2024-11-01,KW/23C/1236,latecomer sign-in,200,Pending
+2024-11-01,KW/23C/3452,latecomer sign-in,200,Pending
+2024-11-01,KW/23C/0026,latecomer sign-in,200,Pending
+2024-11-01,KW/23C/0245,latecomer sign-in,200,Pending
+2024-11-01,KW/23C/1234,latecomer sign-in,0,Approved
+2024-11-03,KW/23B/4536,latecomer sign-in,200,Pending
+2024-11-04,KW/24A/2345,latecomer sign-in,200,Pending
+2024-11-05,KW/24C/5643,latecomer sign-in,200,Pending
+2024-11-05,KW/20C/6666,latecomer sign-in,200,Pending
+2024-11-06,KW/24A/5544,latecomer sign-in,200,Pending
+2024-11-08,KW/24C/2343,Late sign-in,200,Pending
+2024-11-13,KW/24A/0206,Late sign-in,200,Pending
+2024-11-13,KW/24A/0207,Late sign-in,200,Pending
+2024-11-13,KW/24A/0208,Late sign-in,200,Pending
+2024-11-15,KW/24A/3456,Late sign-in,200,Pending
+2024-11-15,KW/24A/4567,Late sign-in,0,Approved

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign-In Attendance</title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='signupstyle.css')}}">
+
+	<!-- <link rel="stylesheet" type="text/css" href="/static/signupstyle.css"> -->
+
+</head>
+<body>
+	<header>
+		<img src="{{url_for('static', filename='LOGO.jpg')}}" alt="NIESAT Logo" width="80" height = "80"/>
+		<h1> Mark Attendance Register</h1>
+	</header>
+	<main>
+		
+		
+		<form action="{{ url_for('registration') }}" method="POST" onsubmit="return validateForm()"> <!--action="{{ url_for('registration') }}"-->
+			<h2>Sign-In for Today</h2>
+
+			<div class="regErrorMsg">{{regErrorMsg}} </div>
+
+
+			<label for="name">First Name <span class="required">*</span></label>
+			<input type="text" id="name" name="fname" required>
+
+			<label for="name">Middle Name </label>
+			<input type="text" id="name" name="mname" optional>
+
+			<label for="name">Last Name <span class="required">*</span></label>
+			<input type="text" id="name" name="sname" required>
+
+			<label for="statecode">StateCode <span class="required">*</span></label>
+			<input type="text" id="username" name="statecode" onblur="checkInput()" maxlength="11" minlength="1" pattern="[Kk][Ww]/\d{2}[a-cA-C]/\d{4}" title="Must contain correct and complete statecode: KW/XXX/XXXX" required> <!--"-->
+			<p id="errorMsg"></p>
+
+			<div id="error" class="error"></div>
+        	<div id="success" class="success"></div>
+			<!-- <p class="error-message"></p> -->
+
+			<button type="submit">Sign-In</button>
+			<p>Already signed in? <a href="{{ url_for('history') }}">Check Attendance History</a></p>
+		</form>
+	</main>
+
+	<script>
+		<!-- function errorHandler() {
+			if (regErrorMsg !== "") {
+			  let errorElement = document.getElementById("regError");
+			  errorElement.innerHTML = {{regErrorMsg}};
+			  return false;
+			} else {
+			  return true;
+			}
+		} -->
+		function checkInput() {
+			var input = document.getElementById("username").value;
+			var errorMsg = document.getElementById("errorMsg");
+			
+			if (!/^[a-zA-Z][a-zA-Z0-9]*$/.test(input)) {
+				errorMsg.textContent = "Username must start with a letter and only contain letters and numbers";
+			} else {
+				errorMsg.textContent = "";
+			}
+		}
+	</script>
+
+</body>
+</html>
