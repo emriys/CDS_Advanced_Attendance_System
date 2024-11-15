@@ -1,0 +1,1 @@
+## The purpose of this project is to develop a system that makes taking attendance of NYSC corp members as seamless as possible.

@@ -1,0 +1,2 @@
+# Hide all files in the flask_session directory
+flask_session/
