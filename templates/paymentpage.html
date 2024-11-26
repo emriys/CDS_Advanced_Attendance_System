@@ -20,7 +20,7 @@
             <div class="payment-header">
                 <h1>Payment Required</h1>
                 <div class="payment-header-compact">
-                    <p style="color: red;">You have signed in late!</p>
+                    <p style="color: red;">{{ statecode }}, you have signed in late!</p>
                     <p>
                         Please pay the lateness fee to the account below and confirm with the treasurer.
                     </p>
@@ -73,14 +73,14 @@
 
 
     <script>
-        // Poll the server to check if the status has changed to "Approved"
-        setInterval(async function () {
+        // Poll the server every 3 seconds to check if the status has changed to "Approved"
+        async function fetchData() {
+            var status_show = document.getElementById("status");
             const response = await fetch("{{ url_for('check_status', statecode=statecode) }}");
-            var status_show = document.getElementById("status").innerHTML;
             const status = await response.text();
             if (status === "Approved") {
-                document.getElementById("status").innerHTML = "Approved";
-                document.getElementById("status").style.color = '#4CAF50';
+                status_show.innerHTML = "Approved";
+                status_show.style.color = '#4CAF50';
                 setTimeout(function () {
                     // Create a form dynamically
                     const form = document.createElement("form");
@@ -111,17 +111,19 @@
                     document.body.appendChild(form);
                     form.submit();
 
-                    //window.location.href = "{{url_for('late_reg',fname=fname,mname=mname,sname=sname,statecode=statecode,signInTime=signInTime,signInTD=signInTD,client_ip=client_ip) }}";
                 }, 3000);  // Redirect after a short delay
             }
             else {
-                document.getElementById("status").innerHTML = "Pending";
-                document.getElementById("status").style.color = '#FFBF00';
+                status_show.innerHTML = "Pending";
+                status_show.style.color = '#FFBF00';
             }
-        }, 3000);  // Check every 3 seconds
+            setTimeout(fetchData, 3000); // Call itself after a delay
+        };  // Check every 3 seconds
+        fetchData();
     </script>
 
     <script>
+        // Copy to clipboard function
         number = document.getElementById('account-number').innerHTML
         console.log(number)
         amount = document.getElementById('amount').innerHTML

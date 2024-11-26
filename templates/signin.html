@@ -18,7 +18,7 @@
 	<main>
 		
 		
-		<form action="{{ url_for('registration') }}" method="POST" onsubmit="return validateForm()"> <!--action="{{ url_for('registration') }}"-->
+		<form action="{{ url_for('signin') }}" method="POST">
 			<h2>Sign-In for Today</h2>
 
 			<div class="regErrorMsg">{{regErrorMsg}} </div>
@@ -34,39 +34,13 @@
 			<input type="text" id="name" name="sname" required>
 
 			<label for="statecode">StateCode <span class="required">*</span></label>
-			<input type="text" id="username" name="statecode" onblur="checkInput()" maxlength="11" minlength="1" pattern="[Kk][Ww]/\d{2}[a-cA-C]/\d{4}" title="Must contain correct and complete statecode: KW/XXX/XXXX" required> <!--"-->
-			<p id="errorMsg"></p>
+			<input type="text" id="username" name="statecode" maxlength="11" minlength="1" pattern="[Kk][Ww]/\d{2}[a-cA-C]/\d{4}" title="Must contain correct and complete statecode: KW/XXX/XXXX" required> <!--"-->
 
-			<div id="error" class="error"></div>
-        	<div id="success" class="success"></div>
-			<!-- <p class="error-message"></p> -->
 
 			<button type="submit">Sign-In</button>
 			<p>Already signed in? <a href="{{ url_for('history') }}">Check Attendance History</a></p>
 		</form>
 	</main>
-
-	<script>
-		<!-- function errorHandler() {
-			if (regErrorMsg !== "") {
-			  let errorElement = document.getElementById("regError");
-			  errorElement.innerHTML = {{regErrorMsg}};
-			  return false;
-			} else {
-			  return true;
-			}
-		} -->
-		function checkInput() {
-			var input = document.getElementById("username").value;
-			var errorMsg = document.getElementById("errorMsg");
-			
-			if (!/^[a-zA-Z][a-zA-Z0-9]*$/.test(input)) {
-				errorMsg.textContent = "Username must start with a letter and only contain letters and numbers";
-			} else {
-				errorMsg.textContent = "";
-			}
-		}
-	</script>
 
 </body>
 </html>

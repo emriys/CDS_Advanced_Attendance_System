@@ -18,17 +18,11 @@
         <button class="openbtn" onclick="openNav()">☰</button>
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-            <a href="/homepage">Homepage</a>
             <a href="dashboard">Dashboard</a>
-            <br />
-            <br />
-            <br />
-            <br>
-            <br />
-            <br>
             <a href="settings">Settings</a>
         </div>
     </div>
+
     <header>
         <img src="{{url_for('static', filename='LOGO.jpg')}}" alt="NIESAT Logo" width="80" height="80" />
 
@@ -53,8 +47,9 @@
                                 <div class="form-group">
                                     <label class="form-label" for="state_code">State Code</label>
                                     <input class="form-control" id="stateCodeInput" maxlength="11" minlength="1"
-                                        name="state_code" required="" type="text" value="" required>
-                                    <!--  pattern="[Kk][Ww]/\d{2}[a-cA-C]/\d{4}" title="Must contain correct and complete statecode: KW/XXX/XXXX"-->
+                                        pattern="[Kk][Ww]/\d{2}[a-cA-C]/\d{4}"
+                                        title="Must contain correct and complete statecode: KW/XXX/XXXX"
+                                        name="state_code" type="text" placeholder="KW/XXX/XXXX" value="" required>
 
                                 </div>
                                 <button type="button" class="btn btn-primary" id="check-button">Check</button>
@@ -62,7 +57,7 @@
                                 <div class="form-group">
                                     <label class="form-label" for="balance">Amount</label>
                                     <input class="form-control" id="balance-id" name="balance" required="" type="text"
-                                        value="">
+                                        value="" readonly>
 
                                 </div>
 
@@ -122,7 +117,7 @@
 
         // Add event listener to "Check" button
         checkButton.addEventListener('click', () => {
-            // Get the account number value
+            // Get the statecode value
             const stateCode = stateCodeInput.value;
 
             // Send a request to the server to fetch the amount based on the state code
@@ -135,12 +130,12 @@
                 .catch(error => console.error(error));
         });
 
+        // Side bar config
         function openNav() {
             document.getElementById("mySidebar").style.width = "230px";
-            //document.getElementById("main").style.marginLeft = "250px";
         }
 
-        /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+        // Set the width of the side navigation to 0 and the left margin of the page content to 0
         function closeNav() {
             document.getElementById("mySidebar").style.width = "0";
             //document.getElementById("main").style.marginLeft = "0";

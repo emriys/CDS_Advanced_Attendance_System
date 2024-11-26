@@ -7,10 +7,14 @@ import os
 from datetime import datetime, time
 import openpyxl
 import random
+from blueprints import register_blueprints
 
 app = Flask(__name__)
 hostname = socket.gethostname()
 IPAddr = socket.gethostbyname(hostname)
+
+# Register Blueprints
+register_blueprints(app)
 
 # Define the path to the CSV files
 x = datetime.now()
@@ -61,21 +65,17 @@ def check():
     else:        
         return render_template ("history.html")
     
-@app.route('/signin')
+@app.route('/signin', methods=['GET', 'POST'])
 def signin():  
-    return render_template ("signin.html")
-
-@app.route('/registration', methods=['GET', 'POST'])
-def registration():
-    # HANDLES USER SIGN-IN
-    
-    # Define attendance time ranges
-    early_start = time(8, 45)  # 8:45 AM
-    early_end = time(9, 20)    # 9:20 AM
-    late_start = time(9, 20)   # 9:20 AM
-    late_end = time(12, 5)     # 12:05 PM
+    # HANDLES USER SIGN IN PROCESS
     
     if request.method == "POST":
+        # Define attendance time ranges
+        early_start = time(8, 45)  # 8:45 AM
+        early_end = time(9, 20)    # 9:20 AM
+        late_start = time(9, 20)   # 9:20 AM
+        late_end = time(12, 5)     # 12:05 PM
+
         fname = request.form['fname'].lower()
         mname = request.form['mname'].lower()
         sname = request.form['sname'].upper()
@@ -117,14 +117,12 @@ def registration():
                 
             elif early_start <= current_time < early_end :
                 add_user_to_database(fname,mname,sname,statecode,signInTime,signInTD,client_ip)
+                return render_template ("thankyouregister.html")
             else:
                 regErrorMsg = "Sign-in time elapsed or not yet reached!"
                 return render_template ("signin.html", regErrorMsg=regErrorMsg)   
     
-    else:    
-        return render_template ("signup.html")
-    
-    return render_template ("thankyouregister.html")
+    return render_template ("signin.html")
 
 @app.route('/late/signin', methods=['GET', 'POST'])
 def late_reg():
@@ -220,27 +218,22 @@ def pay_monthly_due():
 
 @app.route('/admin/settings')
 def admin_settings():
-    return """<html>
-            <head>
-                <meta charset="UTF-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <meta http-equiv="refresh" content="4; url= /admin/dashboard">
-                <title>Error page</title>
-            </head>
-            <body style="align-items: center; font-size: 40px;">
-                <p>
-                    This page is still under construction.
-                    <br>
-                    Feature will be available soon.
-                </p>
-            </body>
-            </html>"""
-    # return render_template ("error.html")
+    return render_template ("adminsettings.html")
 
-@app.route('/payment2')
-def payment2():
-    return render_template("payment2.html")
+@app.route('/change_login', methods=['POST'])
+def change_login():
+    if request.method == "POST" :
+        username = request.form['username']
+        password = request.form['passwd']
+        print(username)
+        print(password)
+        if not username or not password:
+            return jsonify(success=False, message="Missing username or password!")
+    # Process feedback
+        return jsonify(success=True, message="Feedback submitted successfully!")
+    
+    else:
+        return """<html>NOT POST METHOD</html>"""
 
 
 # --------- FUNCTIONS ---------- #

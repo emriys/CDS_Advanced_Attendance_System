@@ -1,13 +1,16 @@
-First Name,Middle Name,Last Name,StateCode,Fri-01,Mon-04,Tue-05,Wed-06,Fri-08,Wed-13,Fri-15
-abdulsalam,babajide,BODE-OKUNADE,KW/24A/0206,01:35:45,absent,absent,absent,absent,01:01:32,absent
-abdulsalam,babajide,BODE-OKUNADE,KW/24A/4567,absent,00:16:20,absent,absent,absent,absent,22:09:48
-abdulsalam,babajide,BODE-OKUNADE,KW/23C/3421,absent,absent,00:01:04,absent,absent,absent,absent
-abdulsalam,babajide,BODE-OKUNADE,KW/21C/1289,absent,absent,00:03:47,absent,absent,absent,absent
-abdulsalam,mechatronics,BODE-OKUNADE,KW/23B/9807,absent,absent,01:07:38,absent,absent,absent,absent
-bode-okunade,abdulsalam,BABAJIDE,KW/24A/5544,absent,absent,absent,20:56:30,absent,absent,absent
-abdulsalam,babajide,BODE-OKUNADE,KW/32C/5648,absent,absent,absent,22:57:09,absent,absent,absent
-bode-okunade,abdulsalam,BABAJIDE,KW/24C/9087,absent,absent,absent,23:00:35,absent,absent,absent
-abdulsalam,mechatr,BODE-OKUNADE,KW/21C/0099,absent,absent,absent,23:22:45,absent,absent,absent
-abdulselim ,babatola ,BODE-OKUNADE ,KW/24C/2343,absent,absent,absent,absent,12:45:11,absent,absent
-abdulsalam,babajide,BODE-OKUNADE,KW/24A/0208,absent,absent,absent,absent,absent,01:10:42,absent
-bode-okunade,abdulsalam,BABAJIDE,KW/23C/1234,absent,absent,absent,absent,absent,absent,21:38:06
+First Name,Middle Name,Last Name,StateCode,Fri-01,Mon-04,Tue-05,Wed-06,Fri-08,Wed-13,Fri-15,Sun-17,Tue-26
+abdulsalam,babajide,BODE-OKUNADE,KW/24A/0206,01:35:45,absent,absent,absent,absent,01:01:32,absent,absent,absent
+abdulsalam,babajide,BODE-OKUNADE,KW/24A/4567,absent,00:16:20,absent,absent,absent,absent,22:09:48,absent,22:41:39
+abdulsalam,babajide,BODE-OKUNADE,KW/23C/3421,absent,absent,00:01:04,absent,absent,absent,absent,absent,absent
+abdulsalam,babajide,BODE-OKUNADE,KW/21C/1289,absent,absent,00:03:47,absent,absent,absent,absent,absent,absent
+abdulsalam,mechatronics,BODE-OKUNADE,KW/23B/9807,absent,absent,01:07:38,absent,absent,absent,absent,absent,absent
+bode-okunade,abdulsalam,BABAJIDE,KW/24A/5544,absent,absent,absent,20:56:30,absent,absent,absent,absent,absent
+abdulsalam,babajide,BODE-OKUNADE,KW/32C/5648,absent,absent,absent,22:57:09,absent,absent,absent,absent,absent
+bode-okunade,abdulsalam,BABAJIDE,KW/24C/9087,absent,absent,absent,23:00:35,absent,absent,absent,absent,absent
+abdulsalam,mechatr,BODE-OKUNADE,KW/21C/0099,absent,absent,absent,23:22:45,absent,absent,absent,absent,absent
+abdulselim ,babatola ,BODE-OKUNADE ,KW/24C/2343,absent,absent,absent,absent,12:45:11,absent,absent,absent,absent
+abdulsalam,babajide,BODE-OKUNADE,KW/24A/0208,absent,absent,absent,absent,absent,01:10:42,absent,absent,absent
+bode-okunade,abdulsalam,BABAJIDE,KW/23C/1234,absent,absent,absent,absent,absent,absent,21:38:06,absent,absent
+abdulsalam,mechatronic,BODE-OKUNADE,KW/24A/8790,absent,absent,absent,absent,absent,absent,absent,07:26:50,absent
+abdulsalam,engineer,BODE-OKUNADE,KW/23C/3838,absent,absent,absent,absent,absent,absent,absent,absent,22:37:00
+abdulsalam,engineer,BODE-OKUNADE,KW/23C/3938,absent,absent,absent,absent,absent,absent,absent,absent,22:49:46
