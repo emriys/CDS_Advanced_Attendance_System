@@ -76,10 +76,10 @@ def signin():
         late_start = time(9, 20)   # 9:20 AM
         late_end = time(12, 5)     # 12:05 PM
 
-        fname = request.form['fname'].lower()
-        mname = request.form['mname'].lower()
-        sname = request.form['sname'].upper()
-        statecode = request.form['statecode'].upper()
+        fname = request.form['fname'].strip().lower()
+        mname = request.form['mname'].strip().lower()
+        sname = request.form['sname'].strip().upper()
+        statecode = request.form['statecode'].strip().upper()
         
         signInTD = datetime.now().strftime('%Y-%m-%d %H:%M:%S')[:-3] 
         signInTime = datetime.now().strftime('%H:%M:%S')
