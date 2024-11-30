@@ -1,7 +1,4 @@
 transanct_date,state_code,request_type,amount,status
-2024-10-01,TX123,Deposit,300,Pending
-2024-10-02,TX124,Withdrawal,200,Pending
-2024-10-03,TX125,Deposit,450,Pending
 2024-11-01,KW/23C/3886,latecomer sign-in,200,Pending
 2024-11-01,KW/23C/3887,latecomer sign-in,200,Pending
 2024-11-01,KW/23C/1236,latecomer sign-in,200,Pending
@@ -21,3 +18,4 @@ transanct_date,state_code,request_type,amount,status
 2024-11-15,KW/24A/3456,Late sign-in,200,Pending
 2024-11-17,KW/24A/8790,Late sign-in,0,Approved
 2024-11-17,KW/23C/7869,Late sign-in,200,Pending
+2024-11-30,KW/23C/4563,Late sign-in,0,Approved
