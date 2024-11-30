@@ -7,28 +7,28 @@ The purpose of this project is to develop a system that makes taking attendance 
 
 ### Home Page
 
-![Index Page](https://github.com/emriys/CDS_Advanced_Attendance_System/screenshots/Indexpage.png)
+![Index Page](https://github.com/emriys/CDS_Advanced_Attendance_System/blob/master/screenshots/Indexpage.png)
 
 ### Sign-In Page
 
-![Sign-In Page](https://github.com/emriys/CDS_Advanced_Attendance_System/screenshots/SignInPage.png)
+![Sign-In Page](https://github.com/emriys/CDS_Advanced_Attendance_System/blob/master/screenshots/SignInPage.png)
 
 ### Late Fine Payment Page
 
-![Late Fine Payment Page](https://github.com/emriys/CDS_Advanced_Attendance_System/screenshots/LateFinePaymentPage.png)
-(https://github.com/emriys/CDS_Advanced_Attendance_System/screenshots/LateFinePaymentPageApproved.png)
+![Late Fine Payment Page](https://github.com/emriys/CDS_Advanced_Attendance_System/blob/master/screenshots/LateFinePaymentPage.png)
+(https://github.com/emriys/CDS_Advanced_Attendance_System/blob/master/screenshots/LateFinePaymentPageApproved.png)
 
 ### Admin Login Page
 
-![Admin Login Page](https://github.com/emriys/CDS_Advanced_Attendance_System/screenshots/AdminLoginPage.png)
+![Admin Login Page](https://github.com/emriys/CDS_Advanced_Attendance_System/blob/master/screenshots/AdminLoginPage.png)
 
 ### Admin Dashboard Page
 
-![Admin Dashboard Page](https://github.com/emriys/CDS_Advanced_Attendance_System/screenshots/AdminDashboardPage.png)
+![Admin Dashboard Page](https://github.com/emriys/CDS_Advanced_Attendance_System/blob/master/screenshots/AdminDashboardPage.png)
 
 ### Admin Settings Page
 
-![Admin Settings Page](https://github.com/emriys/CDS_Advanced_Attendance_System/screenshots/AdminSettingsPage.png)
+![Admin Settings Page](https://github.com/emriys/CDS_Advanced_Attendance_System/blob/master/screenshots/AdminSettingsPage.png)
 
 ## Features
 
